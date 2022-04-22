@@ -4,3 +4,6 @@
 [submodule "source/source/dmenu"]
 	path = source/source/dmenu
 	url = https://git.suckless.org/dmenu
+[submodule "source/source/dwm"]
+	path = source/source/dwm
+	url = https://git.suckless.org/dwm
