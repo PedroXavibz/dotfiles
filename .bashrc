@@ -6,6 +6,8 @@ source /usr/share/bash-complete-alias/complete_alias
 
 export PS1="\[$(tput bold)\][\[$(tput sgr0)\]\[\033[38;5;244m\]\u\[$(tput sgr0)\]@\h\[$(tput sgr0)\]  \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;244m\]\W\[$(tput sgr0)\]]\[$(tput sgr0)\]\[$(tput bold)\]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
 
+export PS1="\[$(tput bold)\][\[$(tput sgr0)\]\[\033[38;5;242m\]\u\[$(tput sgr0)\]@\h\[$(tput sgr0)\]  \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;242m\]\W\[$(tput sgr0)\]]\\$\[$(tput sgr0)\]\[\033[38;5;36m\]\$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')\[$(tput sgr0)\] \[$(tput sgr0)\]"
+
 ############################ VARIABLES ####################################
 
 export MONITOR=eDP
@@ -39,7 +41,8 @@ alias cl='clear'
 alias e='exit'
 
 alias ..='cd ..'
-alias dev='cd ~/doc/Dev'
+alias dev='cd ~/dev'
+alias cf='cd ~/.config'
 
 alias ls="ls --color"
 alias ll="ls -l --color"
@@ -71,6 +74,29 @@ complete -F _complete_alias "${!BASH_ALIASES[@]}"
 
 alias dd="bs=16384K status=progress"
 complete -F _complete_alias "${!BASH_ALIASES[@]}"
+
+alias tm='transmission-remote'
+
+#-_-_-_-_--_-_-_-_- [GIT] -_-_-_-_--_-_-_-_-
+alias g-init='git init'
+alias g-add='git add'
+alias g-commit='git commit -m'
+alias g-status='git status'
+alias g-log='git log'
+alias g-show='git show'
+alias g-add-repo='git remote add origin'
+alias g-show-repo='git remote -v'
+alias g-push='git push'
+alias g-clone='git clone'
+alias g-pull='git pull'
+alias g-restore='git restore'
+
+alias bran-crate='git branch'
+alias bran-change='git checkout'
+alias bran-merge='git merge'
+alias bran-remove='git branch -D'
+alias bran-show='git branch -a'
+alias bran-show-remote='git branch -r'
 
 #########################################################################
 

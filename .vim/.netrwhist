@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/home/koeila/dev/Easy-split/public'
 let g:netrw_dirhist_4='/home/morsa/doc/Dev/Web/anime-list/app/src/components/ContainerRating'
 let g:netrw_dirhist_3='/home/morsa/.vim'
 let g:netrw_dirhist_2='/home/morsa/.config/nvim/lua/user/lsp'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_9='/home/morsa/Documentos/C++/1-HelloWorld'
 let g:netrw_dirhist_8='/home/morsa/Documentos/C++/1-HelloWorld/src'
 let g:netrw_dirhist_7='/home/morsa/.vim'
 let g:netrw_dirhist_6='/home/morsa'
-let g:netrw_dirhist_5='/home/morsa/.vim'
