@@ -9,7 +9,7 @@ export PS1="\[$(tput bold)\][\[$(tput sgr0)\]\[\033[38;5;244m\]\u\[$(tput sgr0)\
 export MONITOR=eDP
 export POLYBAR=$HOME/.config/polybar/themes
 
-export PATH=$HOME/.local/bin:$HOME/.cargo/bin:$PATH
+export PATH=$HOME/.local/bin/:$HOME/.cargo/bin/:$PATH
 
 export NVIM_DIR=$HOME/.config/nvim
 export VIM_DIR=$HOME/.vim
@@ -62,6 +62,8 @@ alias rmm='shred -v -u -z -n'
 alias srmm='sudo shred -v -u -z -n'
 
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+alias dd="bs=16384K status=progress"
 
 #########################################################################
 
