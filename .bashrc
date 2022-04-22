@@ -63,7 +63,8 @@ alias srg='sudo ranger .'
 
 alias ufw='sudo ufw'
 complete -F _complete_alias "${!BASH_ALIASES[@]}"
-alias macchanger='sudo macchanger'
+
+alias mac='sudo macchanger'
 complete -F _complete_alias "${!BASH_ALIASES[@]}"
 
 alias rmm='shred -v -u -z -n'
@@ -76,6 +77,7 @@ alias dd="bs=16384K status=progress"
 complete -F _complete_alias "${!BASH_ALIASES[@]}"
 
 alias tm='transmission-remote'
+complete -F _complete_alias "${!BASH_ALIASES[@]}"
 
 #-_-_-_-_--_-_-_-_- [GIT] -_-_-_-_--_-_-_-_-
 alias g-init='git init'
