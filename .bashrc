@@ -13,7 +13,7 @@ export PATH=$HOME/.local/bin/:$HOME/.cargo/bin/:$PATH
 
 export NVIM_DIR=$HOME/.config/nvim
 export VIM_DIR=$HOME/.vim
-export EDITOR=/bin/vim
+export EDITOR=/usr/local/bin/vim
 
 export TERMINAL=st
 
