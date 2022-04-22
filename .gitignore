@@ -1,0 +1,4 @@
+# Dont track
+/.vim/autoload/
+/.vim/plugged/
+
