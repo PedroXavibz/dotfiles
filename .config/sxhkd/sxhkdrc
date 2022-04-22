@@ -1,0 +1,33 @@
+################ Printscream ###
+Print
+  maim ~/imgs/Screenshots/$(date +%s).png
+
+super + Print
+  maim --select | tee ~/imgs/Screenshots/$(date +%s).png | xclip -selection clipboard -t image/png
+
+################ Volume #######
+XF86AudioMute 
+  pamixer -t
+
+XF86AudioLowerVolume
+  pamixer -d 10
+
+XF86AudioRaiseVolume
+  pamixer -i 10
+
+################ Brightness ###
+XF86MonBrightnessDown
+  xbacklight -dec 10
+
+XF86MonBrightnessUp
+  xbacklight -inc 10
+
+super + n
+  nitrogen
+
+super + m 
+  arandr
+
+super + F1
+  firefox
+
