@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cur_volume= pamixer --get-volume-human
+echo $cur_volume
+
