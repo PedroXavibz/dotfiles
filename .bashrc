@@ -2,6 +2,8 @@
 # ~/.bashrc
 #
 
+source /usr/share/bash-complete-alias/complete_alias
+
 export PS1="\[$(tput bold)\][\[$(tput sgr0)\]\[\033[38;5;244m\]\u\[$(tput sgr0)\]@\h\[$(tput sgr0)\]  \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;244m\]\W\[$(tput sgr0)\]]\[$(tput sgr0)\]\[$(tput bold)\]\\$\[$(tput sgr0)\] \[$(tput sgr0)\]"
 
 ############################ VARIABLES ####################################
@@ -44,6 +46,7 @@ alias ll="ls -l --color"
 alias le='exa -l --icons -g -h -@ --git --color-scale'
 
 alias sp='sudo pacman'
+complete -F _complete_alias "${!BASH_ALIASES[@]}"
 alias s='sudo'
 
 alias mt='sudo mount'
@@ -56,18 +59,20 @@ alias rg='ranger .'
 alias srg='sudo ranger .'
 
 alias ufw='sudo ufw'
+complete -F _complete_alias "${!BASH_ALIASES[@]}"
 alias macchanger='sudo macchanger'
+complete -F _complete_alias "${!BASH_ALIASES[@]}"
 
 alias rmm='shred -v -u -z -n'
 alias srmm='sudo shred -v -u -z -n'
 
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+complete -F _complete_alias "${!BASH_ALIASES[@]}"
 
 alias dd="bs=16384K status=progress"
+complete -F _complete_alias "${!BASH_ALIASES[@]}"
 
 #########################################################################
-
-source /usr/share/bash-completion/completions/git
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
