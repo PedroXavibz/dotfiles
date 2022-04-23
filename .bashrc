@@ -6,6 +6,7 @@ source /usr/share/bash-complete-alias/complete_alias
 
 export PS1="\[$(tput bold)\][\[$(tput sgr0)\]\[\033[38;5;242m\]\u\[$(tput sgr0)\]@\h\[$(tput sgr0)\]  \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;242m\]\W\[$(tput sgr0)\]]\\$\[$(tput sgr0)\]\[\033[38;5;36m\]\$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')\[$(tput sgr0)\] \[$(tput sgr0)\]"
 
+
 ############################ VARIABLES ####################################
 
 export MONITOR=eDP
@@ -30,7 +31,6 @@ export FZF_DEFAULT_OPTS="--height 50% --cycle --layout=reverse --border"
 # export FZF_DEFAULT_OPTS="--height 70% --cycle --layout=reverse --border --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
 
 #########################################################################
-
 
 
 ############################ ALIASES ####################################
