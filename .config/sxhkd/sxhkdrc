@@ -6,14 +6,23 @@ super + Print
   maim --select | tee ~/imgs/Screenshots/$(date +%s).png | xclip -selection clipboard -t image/png
 
 ################ Volume #######
+shift + F4
+  notify-volume m
+
+shift + F5
+  notify-volume -10
+
+shift + F6
+  notify-volume 10
+
 XF86AudioMute 
-  pamixer -t
+  notify-volume m
 
 XF86AudioLowerVolume
-  pamixer -d 10
+  notify-volume -10
 
 XF86AudioRaiseVolume
-  pamixer -i 10
+  notify-volume 10
 
 ################ Brightness ###
 XF86MonBrightnessDown
