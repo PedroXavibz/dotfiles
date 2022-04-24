@@ -105,6 +105,9 @@ alias bran-remove='git branch -D'
 alias bran-show='git branch -a'
 alias bran-show-remote='git branch -r'
 
+#-_-_-_-_--_-_-_-_- [YT-DLP] -_-_-_-_--_-_-_-_-
+alias yt-mp3='yt-dlp -f "ba" -x --audio-format mp3 --embed-thumbnail'
+
 #########################################################################
 
 # If not running interactively, don't do anything
