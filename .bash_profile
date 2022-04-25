@@ -4,10 +4,6 @@
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
-if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-  exec startx -- -keeptty >~/.xorg.log 2>&1
-fi
-
 export POLYBAR=$HOME/.config/polybar/themes
 
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -33,4 +29,8 @@ export FZF_DEFAULT_OPTS="--height 50% --cycle --layout=reverse --border"
 # export FZF_DEFAULT_OPTS="--height 70% --cycle --layout=reverse --border --preview 'bat --color=always --style=numbers --line-range=:500 {}'"
 
 xrandr --output HDMI-A-0 --mode 1024x768 --pos 0x0 --rotate normal --output eDP --primary --mode 1366x768 --pos 1311x0 --rotate normal
+
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+  exec startx -- -keeptty >~/.xorg.log 2>&1
+fi
 
