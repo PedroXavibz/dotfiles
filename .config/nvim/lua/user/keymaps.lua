@@ -18,7 +18,9 @@ vim.g.maplocalleader = ' '
 --   term_mode = "t",
 --   command_mode = "c",
 
--- Normal --
+---_-_--_-_- -_-_--_-_--_-_--_-_- -_-_--_-_-
+-- _-_--_-_- - [NORMAL] _-_--_-_- -
+
 -- Better window navigation
 keymap('n', '<C-h>', '<C-w>h', opts)
 keymap('n', '<C-j>', '<C-w>j', opts)
@@ -58,19 +60,21 @@ keymap('n', 'dr', '<C-.>', opts)
 keymap('n', '<A-h>', '^', opts)
 keymap('n', '<A-l>', 'g_', opts)
 
--- Go to line up / bellow
-keymap('n', 'O', 'O<ESC>', opts)
-keymap('n', 'o', 'o<ESC>', opts)
-
 -- Navigate between paragraphs
 keymap('n', '<C-o>', '{', opts)
 keymap('n', '<C-i>', '}', opts)
+
+-- Go to line up / bellow
+keymap('n', 'O', 'O<ESC>', opts)
+keymap('n', 'o', 'o<ESC>', opts)
 
 -- Insert --
 -- Press jj fast to enter
 keymap('i', 'jj', '<ESC>', opts)
 
--- Visual --
+---_-_--_-_- -_-_--_-_--_-_--_-_- -_-_--_-_-
+-- _-_--_-_- - [VISUAL MODE] _-_--_-_- -
+
 -- Stay in indent mode
 keymap('v', '<', '<gv', opts)
 keymap('v', '>', '>gv', opts)
@@ -80,21 +84,43 @@ keymap('v', '<A-j>', ':m .+1<CR>==', opts)
 keymap('v', '<A-k>', ':m .-2<CR>==', opts)
 keymap('v', 'p', '"_dP', opts)
 
--- Visual Block --
+-- Go to begginer / end line
+keymap('v', '<A-h>', '^', opts)
+keymap('v', '<A-l>', 'g_', opts)
+
+-- Navigate between paragraphs
+keymap('v', '<C-o>', '{', opts)
+keymap('v', '<C-i>', '}', opts)
+
+---_-_--_-_- -_-_--_-_--_-_--_-_- -_-_--_-_-
+-- _-_--_-_- - [VISUAL BLOCK MODE] _-_--_-_- -
+
 -- Move text up and down
 keymap('x', 'J', ":move '>+1<CR>gv-gv", opts)
 keymap('x', 'K', ":move '<-2<CR>gv-gv", opts)
 keymap('x', '<A-j>', ":move '>+1<CR>gv-gv", opts)
 keymap('x', '<A-k>', ":move '<-2<CR>gv-gv", opts)
 
--- Terminal --
+-- Go to begginer / end line
+keymap('x', '<A-h>', '^', opts)
+keymap('x', '<A-l>', 'g_', opts)
+
+-- Navigate between paragraphs
+keymap('x', '<C-o>', '{', opts)
+keymap('x', '<C-i>', '}', opts)
+
+---_-_--_-_- -_-_--_-_--_-_--_-_- -_-_--_-_-
+-- _-_--_-_- - [TERMINAL MODE] _-_--_-_- -
+
 -- Better terminal navigation
 keymap('t', '<C-h>', '<C-\\><C-N><C-w>h', term_opts)
 keymap('t', '<C-j>', '<C-\\><C-N><C-w>j', term_opts)
 keymap('t', '<C-k>', '<C-\\><C-N><C-w>k', term_opts)
 keymap('t', '<C-l>', '<C-\\><C-N><C-w>l', term_opts)
 
--- Telescope
+---_-_--_-_- -_-_--_-_--_-_--_-_- -_-_--_-_-
+-- _-_--_-_- - [TELESCOPE] _-_--_-_- -
+
 --keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
 keymap(
 	'n',
@@ -104,5 +130,7 @@ keymap(
 )
 keymap('n', '<leader>t', '<cmd>Telescope live_grep<cr>', opts)
 
--- Nvimtree
+---_-_--_-_- -_-_--_-_--_-_--_-_- -_-_--_-_-
+-- _-_--_-_- - [NVIMTREE] _-_--_-_- -
+
 keymap('n', '<C-t>', ':NvimTreeToggle<cr>', opts)

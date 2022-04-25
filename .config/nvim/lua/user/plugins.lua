@@ -51,6 +51,7 @@ return packer.startup(function(use)
 			require('impatient').enable_profile()
 		end,
 	})
+	use 'kyazdani42/nvim-web-devicons' -- A Lua fork of vim-devicons.
 
 	-- Colorschemes
 	use 'ishan9299/modus-theme-vim'
@@ -58,149 +59,51 @@ return packer.startup(function(use)
 	use 'olimorris/onedarkpro.nvim'
 	use 'yashguptaz/calvera-dark.nvim'
 	use 'ellisonleao/gruvbox.nvim'
-	use({
-		'catppuccin/nvim',
-		as = 'catppuccin',
-	})
 	use 'sainnhe/sonokai'
 	use 'sainnhe/everforest'
 	use 'ayu-theme/ayu-vim'
+	use 'Mofiqul/vscode.nvim'
 
-	-- Syntax
+	-- Syntax / Programming support
 	use 'nvim-treesitter/nvim-treesitter' -- Nvim Treesitter configurations and abstraction layer
-
-	-- Editing supports
-	use({
-		'p00f/nvim-ts-rainbow', -- Rainbow parentheses for neovim using tree-sitter.
-		'windwp/nvim-ts-autotag', -- Use treesitter to auto close and auto rename html tag Topics
-		'filipdutescu/renamer.nvim', -- VS Code-like renaming UI for Neovim, writen in Lua.
-		'olimorris/persisted.nvim', -- Simple session management for Neovim. Updated fork with git branch support
-		config = function()
-			require('persisted').setup({
-				dir = vim.fn.expand(vim.fn.stdpath 'data' .. '/sessions/'), -- directory where session files are saved
-				use_git_branch = false, -- create session files based on the branch of the git enabled repository
-				autosave = true, -- automatically save session files when exiting Neovim
-				autoload = true, -- automatically load the session for the cwd on Neovim startup
-				options = { 'buffers', 'curdir', 'tabpages', 'winsize' }, -- session options used for saving
-				allowed_dirs = nil, -- table of dirs that the plugin will auto-save and auto-load from
-				ignored_dirs = nil, -- table of dirs that are ignored when auto-saving and auto-loading
-				before_save = function() end, -- function to run before the session is saved to disk
-				after_save = function() end, -- function to run after the session is saved to disk
-			})
-		end,
-	})
-
-	-- Color
 	use 'norcalli/nvim-colorizer.lua' -- The fastest Neovim colorizer.
+	use 'p00f/nvim-ts-rainbow' -- Rainbow parentheses for neovim using tree-sitter.
+	use 'windwp/nvim-ts-autotag' -- Use treesitter to auto close and auto rename html tag Topics
+	use 'filipdutescu/renamer.nvim' -- VS Code-like renaming UI for Neovim, writen in Lua.
 
-	-- Icon
-	use 'kyazdani42/nvim-web-devicons' -- A Lua fork of vim-devicons.
-
-	-- Utility
-	use 'rcarriga/nvim-notify' -- A fancy, configurable, notification manager for NeoVim.
-	use({
-		'xiyaowong/nvim-transparent', -- Make background transparent
-		config = function()
-			require('transparent').setup({
-				enable = true, -- boolean: enable transparent
-				extra_groups = { -- table/string: additional groups that should be clear
-					-- In particular, when you set it to 'all', that means all avaliable groups
-
-					-- example of akinsho/nvim-bufferline.lua
-					'BufferLineTabClose',
-					'BufferlineBufferSelected',
-					'BufferLineFill',
-					'BufferLineBackground',
-					'BufferLineSeparator',
-					'BufferLineIndicatorSelected',
-				},
-				exclude = {}, -- table: groups you don't want to clear
-			})
-		end,
-	})
-
-	-- Tabline
-	use({ 'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons' })
-
-	-- Statusline
-	use({
-		'nvim-lualine/lualine.nvim',
-		requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-	})
-
-	-- Indent
-	use({
-		'lukas-reineke/indent-blankline.nvim',
-		config = function()
-			require('indent_blankline').setup({
-				show_current_context = true,
-				show_current_context_start = false,
-			})
-		end,
-	})
+	-- UI
+	use 'nvim-lualine/lualine.nvim'
+	use 'akinsho/bufferline.nvim'
+	use 'akinsho/toggleterm.nvim' -- A neovim lua plugin to help easily manage multiple terminal windows
+	use 'nvim-telescope/telescope.nvim' -- Find, Filter, Preview, Pick. All lua, all the time.
+	use 'nvim-telescope/telescope-media-files.nvim'
+	use 'kyazdani42/nvim-tree.lua' -- A simple and fast file explorer tree for Neovim !.
 
 	-- Completion
-	use({
-		'hrsh7th/nvim-cmp', -- The completion plugin
-		'hrsh7th/cmp-nvim-lsp', -- Lsp completion
-		'hrsh7th/cmp-buffer', -- Buffer completions
-		'hrsh7th/cmp-path', -- Path completions
-		'hrsh7th/cmp-cmdline', -- Cmdline completions
-		'hrsh7th/cmp-nvim-lua', -- This source will complete neovim's Lua runtime API such vim.lsp.*
-		'saadparwaiz1/cmp_luasnip', -- Snippet completions
-	})
+	use 'hrsh7th/nvim-cmp' -- The completion plugin
+	use 'hrsh7th/cmp-nvim-lsp' -- Lsp completion
+	use 'hrsh7th/cmp-buffer' -- Buffer completions
+	use 'hrsh7th/cmp-path' -- Path completions
+	use 'hrsh7th/cmp-cmdline' -- Cmdline completions
+	use 'hrsh7th/cmp-nvim-lua' -- This source will complete neovim's Lua runtime API such vim.lsp.*
+	use 'saadparwaiz1/cmp_luasnip' -- Snippet completions
 
 	-- Snippets
-	use({
-		'L3MON4D3/LuaSnip', -- Snippets engine
-		'rafamadriz/friendly-snippets', -- A bunch of snippets to use
-	})
+	use 'L3MON4D3/LuaSnip' -- Snippets engine
+	use 'rafamadriz/friendly-snippets'
 
 	-- LSP
-	use({
-		'neovim/nvim-lspconfig', -- Collection of configurations for built-in LSP client
-		'williamboman/nvim-lsp-installer', -- Simple to use language server installer
-		'jose-elias-alvarez/null-ls.nvim', -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua.
-	})
+	use 'neovim/nvim-lspconfig' -- Collection of configurations for built-in LSP client
+	use 'williamboman/nvim-lsp-installer' -- Simple to use language server installer
+	use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua.
 
 	-- Comment
-	use({
-		'numToStr/Comment.nvim', -- Smart and powerful comment plugin for neovim.
-		'JoosepAlviste/nvim-ts-context-commentstring',
-	})
-
-	-- Terminal integration
-	use 'akinsho/toggleterm.nvim' -- A neovim lua plugin to help easily manage multiple terminal windows
-
-	-- Fuzzy Finder
-	use({
-		'nvim-telescope/telescope.nvim', -- Find, Filter, Preview, Pick. All lua, all the time.
-		requires = { { 'nvim-lua/plenary.nvim' } },
-	})
-	use 'nvim-telescope/telescope-media-files.nvim'
-
-	-- File explorer
-	use 'kyazdani42/nvim-tree.lua' -- A simple and fast file explorer tree for Neovim !.
+	use 'numToStr/Comment.nvim' -- Smart and powerful comment plugin for neovim.
+	use 'JoosepAlviste/nvim-ts-context-commentstring'
 
 	-- Git
 	use 'lewis6991/gitsigns.nvim' -- Git integration: signs, hunk actions, blame, etc.
 	use 'kdheepak/lazygit.nvim'
-
-	-- Scrollbar
-	use({
-		'petertriho/nvim-scrollbar', -- Extensible Neovim Scrollbar
-		config = function()
-			require('scrollbar').setup()
-		end,
-	})
-
-	-- Scrolling
-	use({
-		'karb94/neoscroll.nvim', -- Smooth scrolling neovim plugin written in lua
-		config = function()
-			require('neoscroll').setup()
-		end,
-	})
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
