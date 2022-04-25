@@ -6,7 +6,6 @@ source /usr/share/bash-complete-alias/complete_alias
 
 export PS1="\[$(tput bold)\][\[$(tput sgr0)\]\[\033[38;5;242m\]\u\[$(tput sgr0)\]@\h\[$(tput sgr0)\]  \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;242m\]\W\[$(tput sgr0)\]]\\$\[$(tput sgr0)\]\[\033[38;5;36m\]\$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')\[$(tput sgr0)\] \[$(tput sgr0)\]"
 
-
 ############################ VARIABLES ####################################
 
 export POLYBAR=$HOME/.config/polybar/themes
@@ -109,6 +108,8 @@ alias bran-show-remote='git branch -r'
 alias yt-mp3='yt-dlp -f "ba" -x --audio-format mp3 --embed-thumbnail'
 
 #########################################################################
+
+xrandr --output HDMI-A-0 --mode 1024x768 --pos 0x0 --rotate normal --output eDP --primary --mode 1366x768 --pos 1311x0 --rotate normal
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
