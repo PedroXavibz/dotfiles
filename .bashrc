@@ -48,9 +48,6 @@ alias srmm='sudo shred -v -u -z -n'
 alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 complete -F _complete_alias "${!BASH_ALIASES[@]}"
 
-alias dd="bs=16384K status=progress"
-complete -F _complete_alias "${!BASH_ALIASES[@]}"
-
 alias tm='transmission-remote'
 complete -F _complete_alias "${!BASH_ALIASES[@]}"
 
