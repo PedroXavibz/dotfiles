@@ -14,6 +14,7 @@ alias e='exit'
 alias ..='cd ..'
 alias dev='cd ~/dev'
 alias cf='cd ~/.config'
+alias etc='cd /etc'
 
 alias ls="ls --color"
 alias la="ls -A"
