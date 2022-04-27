@@ -52,6 +52,10 @@ complete -F _complete_alias "${!BASH_ALIASES[@]}"
 alias tm='transmission-remote'
 complete -F _complete_alias "${!BASH_ALIASES[@]}"
 
+#-_-_-_-_--_-_-_-_- [CODE DEVELOPMENT JS] -_-_-_-_--_-_-_-_-
+alias yarn-create='yarn create react-app'
+alias yarn-lint='yarn add eslint --dev && yarn create @eslint/config'
+
 #-_-_-_-_--_-_-_-_- [GIT] -_-_-_-_--_-_-_-_-
 alias g-init='git init'
 alias g-add='git add'
@@ -66,7 +70,7 @@ alias g-clone='git clone'
 alias g-pull='git pull'
 alias g-restore='git restore'
 
-alias bran-crate='git branch'
+alias bran-create='git branch'
 alias bran-change='git checkout'
 alias bran-merge='git merge'
 alias bran-remove='git branch -D'
