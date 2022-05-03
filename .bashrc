@@ -82,5 +82,9 @@ alias yt-mp3='yt-dlp -f "ba" -x --audio-format mp3 --embed-thumbnail'
 
 #########################################################################
 
+eval "$(pyenv init -)"
+
+eval "$(pyenv virtualenv-init -)"
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return

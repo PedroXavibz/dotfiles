@@ -11,13 +11,21 @@ local formatting = null_ls.builtins.formatting
 null_ls.setup({
 	debug = false,
 	sources = {
+		-- python
 		formatting.autopep8,
+		diagnostics.pylint,
+		diagnostics.mypy,
+		-- lua
 		formatting.stylua,
+		-- JS
 		formatting.prettier,
-		formatting.clang_format,
-		formatting.fixjson,
-		formatting.rustfmt,
 		formatting.eslint_d,
 		diagnostics.eslint_d,
+		-- C/C++
+		formatting.clang_format,
+		-- JSON
+		formatting.fixjson,
+		-- Rust
+		formatting.rustfmt,
 	},
 })
