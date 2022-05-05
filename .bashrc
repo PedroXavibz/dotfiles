@@ -6,12 +6,26 @@ source /usr/share/bash-complete-alias/complete_alias
 
 export PS1="\[$(tput bold)\][\[$(tput sgr0)\]\[\033[38;5;242m\]\u\[$(tput sgr0)\]@\h\[$(tput sgr0)\]  \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;242m\]\W\[$(tput sgr0)\]]\\$\[$(tput sgr0)\]\[\033[38;5;36m\]\$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')\[$(tput sgr0)\] \[$(tput sgr0)\]"
 
+
+export PYTHONPATH=/usr/lib/python3.10/site-packages/
+export PYENV_ROOT=$HOME/.pyenv
+
+export LOCAL_BIN=$HOME/.local/bin/
+export MY_SCRIPTS=$HOME/scripts/
+export CARGO_BIN=$HOME/.cargo/bin/
+
+export PATH="$LOCAL_BIN:$MY_SCRIPTS:$CARGO_BIN:$PYENV_ROOT/bin:$PATH"
+
 ############################ ALIASES ####################################
 
 alias cl='clear'
 alias e='exit'
 
 alias ..='cd ..'
+alias img='cd ~/imgs'
+alias src='cd ~/source'
+alias doc='cd ~/doc'
+alias music='cd ~/musics'
 alias dev='cd ~/dev'
 alias cf='cd ~/.config'
 alias etc='cd /etc'

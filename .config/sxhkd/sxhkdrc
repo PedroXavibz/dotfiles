@@ -1,11 +1,12 @@
-################ Printscream ###
+################ Screenshot ################ 
 Print
-  maim ~/imgs/Screenshots/$(date +%s).png
+  maim ~/imgs/screenshots/screenshot-$(date +%s).png
 
 super + Print
-  maim --select | tee ~/imgs/Screenshots/$(date +%s).png | xclip -selection clipboard -t image/png
+  maim --select | tee ~/imgs/screenshots/screenshot-$(date +%s).png | xclip -selection clipboard -t image/png
 
-################ Volume #######
+
+################ Volume ################ 
 shift + F4
   notify-volume m
 
@@ -24,13 +25,16 @@ XF86AudioLowerVolume
 XF86AudioRaiseVolume
   notify-volume 10
 
-################ Brightness ###
+
+################ Brightness ################ 
 XF86MonBrightnessDown
   xbacklight -dec 10
 
 XF86MonBrightnessUp
   xbacklight -inc 10
 
+
+################ Apps ################ 
 super + n
   nitrogen
 
