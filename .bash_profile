@@ -12,11 +12,13 @@ export PYENV_ROOT=$HOME/.pyenv
 
 
 # GENERAL 
-export LOCAL_BIN=$HOME/.local/bin/
 export MY_SCRIPTS=$HOME/scripts/
+export LOCAL_BIN=$HOME/.local/bin/
+export DWBARS=$HOME/scripts/dwmbars
 export CARGO_BIN=$HOME/.cargo/bin/
+export GO_BIN=$HOME/go/bin/
 
-export PATH="$LOCAL_BIN:$MY_SCRIPTS:$CARGO_BIN:$PYENV_ROOT/bin:$PATH"
+export PATH="$LOCAL_BIN:$MY_SCRIPTS:$GO_BIN:$CARGO_BIN:$PYENV_ROOT/bin:$DWBARS:$PATH"
 
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
