@@ -5,6 +5,10 @@ Print
 super + Print
   maim --select | tee ~/imgs/screenshots/screenshot-$(date +%s).png | xclip -selection clipboard -t image/png
 
+################ System ################ 
+super + shift + Return
+  system-action
+
 
 ################ Volume ################ 
 shift + F4
