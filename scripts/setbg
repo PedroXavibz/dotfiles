@@ -18,7 +18,7 @@ screen=$(select_screen)
 nitrogen --set-scaled $wallpaper --head=$screen --save
 
 function change_colorscheme() {
-	wal -i $wallpaper
+	wal -i $wallpaper -n
 
 	notify-send "Colorscheme" "Recompiling dwm, dmenu and st with new colorscheme..."
 
