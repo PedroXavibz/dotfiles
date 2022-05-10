@@ -27,5 +27,7 @@ null_ls.setup({
 		formatting.fixjson,
 		-- Rust
 		formatting.rustfmt,
+		-- Bash
+		formatting.shfmt,
 	},
 })

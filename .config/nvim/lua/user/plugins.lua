@@ -63,6 +63,7 @@ return packer.startup(function(use)
 	use 'sainnhe/everforest'
 	use 'ayu-theme/ayu-vim'
 	use 'Mofiqul/vscode.nvim'
+	use 'folke/tokyonight.nvim'
 
 	-- Syntax / Programming support
 	use 'nvim-treesitter/nvim-treesitter' -- Nvim Treesitter configurations and abstraction layer
