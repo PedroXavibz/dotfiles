@@ -4,9 +4,6 @@
 
 source /usr/share/bash-complete-alias/complete_alias
 
-# MONITOR
-xrandr --output HDMI-A-0 --mode 1024x768 --pos 0x0 --rotate normal --output eDP --primary --mode 1366x768 --pos 1311x0 --rotate normal
-
 # export PS1="\[$(tput bold)\][\[$(tput sgr0)\]\[\033[38;5;242m\]\u\[$(tput sgr0)\]@\h\[$(tput sgr0)\]  \[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;242m\]\W\[$(tput sgr0)\]]\\$\[$(tput sgr0)\]\[\033[38;5;36m\]\$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')\[$(tput sgr0)\] \[$(tput sgr0)\]"
 
 PS1='\[\e[0m\]┌\[\e[0;1m\][\[\e[0;1;32m\]\u\[\e[0;1m\]]\[\e[0;1m\]-\[\e[0;1m\][\[\e[0;1;36m\]\h\[\e[0;1m\]]\[\e[0;1m\]-\[\e[0;1m\][\[\e[0;1;93m\]\W\[\e[0m\] \[\e[0;1;95m\]$(git branch 2>/dev/null | grep '"'"'^*'"'"' | colrm 1 2)\[\e[0;1;95m\]\[\e[0;1m\]]\n\[\e[0m\]└\[\e[0;1m\][\[\e[0;1;93m\]\$\[\e[0;1m\]] \[\e[0m\]'
