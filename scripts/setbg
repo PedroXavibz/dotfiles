@@ -1,0 +1,49 @@
+#!/bin/sh
+
+if [ -z "$1" ]; then
+	echo "Please select a wallpaper"
+	exit 1
+fi
+
+wallpaper=$(realpath $1)
+
+function select_screen() {
+	local monitor="$(xrandr --listactivemonitors | sed 1d | awk '{print NR,$4}' | dmenu -i -p 'Screen: ' | awk '{print $1 - 1}')"
+
+	echo $monitor
+}
+
+screen=$(select_screen)
+
+nitrogen --set-scaled $wallpaper --head=$screen --save
+
+function change_colorscheme() {
+	wal -i $wallpaper
+
+	notify-send "Colorscheme" "Recompiling dwm, dmenu and st with new colorscheme..."
+
+	local src_dir="$HOME/source"
+
+	(cd $src_dir/dwm && sudo make clean install >/dev/null)
+	(cd $src_dir/dmenu && sudo make clean install >/dev/null)
+	(cd $src_dir/st && sudo make clean install >/dev/null)
+
+	# TODO
+	# if sudo -vn; then
+	# 	(cd $src_dir/dwm && sudo make clean install >/dev/null)
+	# 	(cd $src_dir/dmenu && sudo make clean install >/dev/null)
+	# 	(cd $src_dir/st && sudo make clean install >/dev/null)
+	# else
+	# 	local PASSWRD=$(kdialog --password "Enter the password")
+	#
+	# 	(cd $src_dir/dwm && echo $PASSWRD | sudo -S make clean install >/dev/null)
+	# 	(cd $src_dir/dmenu && echo $PASSWRD | sudo -S make clean install >/dev/null)
+	# 	(cd $src_dir/st && echo $PASSWRD | sudo -S make clean install >/dev/null)
+	# fi
+
+}
+
+case "$(printf 'Yes\nNo' | dmenu -i -p 'Change colorscheme')" in
+'Yes') change_colorscheme ;;
+*) exit 1 ;;
+esac
