@@ -19,27 +19,15 @@ nitrogen --set-scaled $wallpaper --head=$screen --save
 
 function change_colorscheme() {
 	wal -i $wallpaper -n
+	pywalfox update
 
 	notify-send "Colorscheme" "Recompiling dwm, dmenu and st with new colorscheme..."
 
 	local src_dir="$HOME/source"
 
-	(cd $src_dir/dwm && sudo make clean install >/dev/null)
-	(cd $src_dir/dmenu && sudo make clean install >/dev/null)
-	(cd $src_dir/st && sudo make clean install >/dev/null)
-
-	# TODO
-	# if sudo -vn; then
-	# 	(cd $src_dir/dwm && sudo make clean install >/dev/null)
-	# 	(cd $src_dir/dmenu && sudo make clean install >/dev/null)
-	# 	(cd $src_dir/st && sudo make clean install >/dev/null)
-	# else
-	# 	local PASSWRD=$(kdialog --password "Enter the password")
-	#
-	# 	(cd $src_dir/dwm && echo $PASSWRD | sudo -S make clean install >/dev/null)
-	# 	(cd $src_dir/dmenu && echo $PASSWRD | sudo -S make clean install >/dev/null)
-	# 	(cd $src_dir/st && echo $PASSWRD | sudo -S make clean install >/dev/null)
-	# fi
+	(cd $src_dir/dwm && make clean install >/dev/null)
+	(cd $src_dir/dmenu && make clean install >/dev/null)
+	(cd $src_dir/st && make clean install >/dev/null)
 
 }
 
