@@ -40,7 +40,7 @@ XF86MonBrightnessUp
 
 ################ Apps ################ 
 super + n
-  nitrogen
+  sxiv ~/imgs/wallpapers/* -tb &
 
 super + m 
   arandr
