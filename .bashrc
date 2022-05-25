@@ -97,6 +97,7 @@ alias bran-show-remote='git branch -r'
 
 #-_-_-_-_--_-_-_-_- [YT-DLP] -_-_-_-_--_-_-_-_-
 alias yt-mp3='yt-dlp -f "ba" -x --audio-format mp3 --embed-thumbnail'
+alias yt-mp4='yt-dlp -f mp4 --embed-thumbnail'
 
 #########################################################################
 
