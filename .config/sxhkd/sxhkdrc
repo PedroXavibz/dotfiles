@@ -15,19 +15,19 @@ shift + F4
   notify-volume m
 
 shift + F5
-  notify-volume -10
+  notify-volume -2
 
 shift + F6
-  notify-volume 10
+  notify-volume 2
 
 XF86AudioMute 
   notify-volume m
 
 XF86AudioLowerVolume
-  notify-volume -10
+  notify-volume -2
 
 XF86AudioRaiseVolume
-  notify-volume 10
+  notify-volume 2
 
 
 ################ Brightness ################ 
