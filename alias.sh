@@ -106,3 +106,12 @@ gprune() {
     # limpa branches remotos deletados
     git fetch --prune && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -d
 }
+
+# Auto-completion para aliases git
+if [ -f /usr/share/bash-completion/completions/git ]; then
+    . /usr/share/bash-completion/completions/git
+    for al in `__git_aliases`; do
+        alias g$al="git $al"
+        complete -o default -o nospace -F _git g$al
+    done
+fi
